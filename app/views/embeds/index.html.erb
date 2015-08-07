@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Embeds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>App</th>
+      <th>Webform</th>
+      <th>Environment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @embeds.each do |embed| %>
+      <tr>
+        <td><%= embed.title %></td>
+        <td><%= embed.app_id %></td>
+        <td><%= embed.webform_id %></td>
+        <td><%= embed.environment %></td>
+        <td><%= link_to 'Show', embed %></td>
+        <td><%= link_to 'Edit', edit_embed_path(embed) %></td>
+        <td><%= link_to 'Destroy', embed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Embed', new_embed_path %>

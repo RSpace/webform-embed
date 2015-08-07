@@ -1,0 +1,33 @@
+<%= form_for(@embed) do |f| %>
+  <% if @embed.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@embed.errors.count, "error") %> prohibited this embed from being saved:</h2>
+
+      <ul>
+      <% @embed.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :app_id, 'App ID' %><br>
+    <%= f.number_field :app_id %>
+  </div>
+  <div class="field">
+    <%= f.label :webform_id, 'Webform ID' %><br>
+    <%= f.number_field :webform_id %>
+  </div>
+  <div class="field">
+    <%= f.label :environment %><br>
+    <%= f.select :environment, ['production', 'staging', 'development'] %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

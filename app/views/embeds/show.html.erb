@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @embed.title %> (<%= @embed.environment %>)</h1>
+</p>
+
+<!-- BEGIN Podio web form -->
+<script src="<%= @embed.script_url %>"></script>
+<script type="text/javascript">
+  _podioWebForm.render(<%= @embed.webform_id %>)
+</script>
+  <div class="podio-webform-container">
+  A webform by <a href="https://company.podio.com/collaboration-software" class="podio-webform-inner">Podio</a>
+  </div>
+<!-- END Podio web form -->
+
+
+<%= link_to 'Edit', edit_embed_path(@embed) %> |
+<%= link_to 'Back', embeds_path %>
